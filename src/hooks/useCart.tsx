@@ -21,8 +21,6 @@ interface CartContextData {
 
 const CartContext = createContext<CartContextData>({} as CartContextData);
 
-
-
 export function CartProvider({ children }: CartProviderProps): JSX.Element {
 
   const [cart, setCart] = useState<Product[]>(() => {
@@ -46,7 +44,6 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
       localStorage.setItem('@RocketShoes:cart', JSON.stringify(cart));
     }
   }, [cart, cartPreviousValue]);
-
 
   const addProduct = async (productId: number) => {
 
